@@ -3,7 +3,7 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
     <script src="js/scripts.js"></script>
     <title>Leap year detector</title>
   </head>
@@ -26,30 +26,3 @@
     </div>
   </body>
 </html>
-styles.css
-#result {
-  display: none;
-}
-scripts.js
-var leapYear = function(year) {
-  if ((year % 4 === 0) && (year % 100 !== 0)) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-$(document).ready(function() {
-  $("form#leap-year").submit(function(event) {
-    var year = parseInt($("input#year").val());
-    var result = leapYear(year);
-
-    $(".year").text(year);
-    if (!result) {
-      $(".not").text("not");
-    }
-
-    $("#result").show();
-    event.preventDefault();
-  });
-});
